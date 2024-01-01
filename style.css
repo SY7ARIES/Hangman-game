@@ -1,0 +1,44 @@
+*{
+    font-family: courier;
+}
+
+#letter_line_box{
+    width: 450px;
+    height: 0px;
+    text-align: center;
+    border-color: black;
+    border: 1px;
+    margin-left: 150px;
+    margin-top: 100px;
+    font-size: 2em;
+}
+
+#keyboard_box{
+    margin-top: 190px;
+    margin-left: 50px;
+    width: 450px;
+}
+
+.row{
+    display: block;
+    width: 650px;
+    height: 80px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.btn{
+    background-color: rgb(255, 255, 255);
+    width: 45px;
+    height: 50px;
+    color: rgb(45, 45, 45);
+    font-size: 1.3em;
+    border-color: rgb(255, 255, 255);
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btn:hover{
+    color: gray;
+}
