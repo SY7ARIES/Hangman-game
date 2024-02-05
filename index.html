@@ -3,53 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href = "style.css">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/word-list.js" defer></script>
+    <script src="scripts/index.js" defer></script>
 </head>
 <body>
-    <div id="left_div">
-        <div id="letter_line_box">
-            <h1 id="letter_line"></h1>
-        </div>
-        <div id="keyboard_box">
-            <div class="row">
-                <input type="button" id="q" name="q" value="Q" class="btn">
-                <input type="button" id="w" name="w" value="W" class="btn">
-                <input type="button" id="e" name="e" value="E" class="btn">
-                <input type="button" id="r" name="r" value="R" class="btn">
-                <input type="button" id="t" name="t" value="T" class="btn">
-                <input type="button" id="y" name="y" value="Y" class="btn">
-                <input type="button" id="u" name="u" value="U" class="btn">
-                <input type="button" id="i" name="i" value="I" class="btn">
-                <input type="button" id="o" name="o" value="O" class="btn">
-                <input type="button" id="p" name="p" value="P" class="btn">
-            </div>
-            <div class="row">
-                <input type="button" id="a" name="a" value="A" class="btn">
-                <input type="button" id="s" name="s" value="S" class="btn">
-                <input type="button" id="d" name="d" value="D" class="btn">
-                <input type="button" id="f" name="f" value="F" class="btn">
-                <input type="button" id="g" name="g" value="G" class="btn">
-                <input type="button" id="h" name="h" value="H" class="btn">
-                <input type="button" id="j" name="j" value="J" class="btn">
-                <input type="button" id="k" name="k" value="K" class="btn">
-                <input type="button" id="l" name="l" value="L" class="btn">
-            </div>
-            <div class="row">
-                <input type="button" id="z" name="z" value="Z" class="btn">
-                <input type="button" id="x" name="x" value="X" class="btn">
-                <input type="button" id="c" name="c" value="C" class="btn">
-                <input type="button" id="v" name="v" value="V" class="btn">
-                <input type="button" id="b" name="b" value="B" class="btn">
-                <input type="button" id="n" name="n" value="N" class="btn">
-                <input type="button" id="m" name="m" value="M" class="btn">
-            </div>
+    <div class="game-modal">
+        <div class="content">
+            <img alt="x_x">
+            <h4></h4>
+            <p><b></b></p>
+            <button class="play-again">Play Again</button>
         </div>
     </div>
-    <div id="right_div">
-        <div id="score_board"></div>
-        <div id="hang_man"></div>
+    <div class="container">
+        <div class="hangman-box">
+            <img src="images/stage-1.png" alt="hangman-image">
+            <h4 class="guesses-text">
+                Incorrect guesses:
+                <b>0 / 9</b>
+            </h4>
+        </div>
+        <div class="game-box">
+            <ul class="word-display"></ul>
+            <h4 class="hint-text">
+                <button>Hint</button>
+                <b></b>
+            </h4>
+            <div class="keyboard"></div>
+        </div>
     </div>
-    <script src="index.js"></script>
+    
 </body>
 </html>

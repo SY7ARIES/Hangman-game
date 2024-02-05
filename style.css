@@ -1,59 +1,235 @@
 *{
-    font-family: courier;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    
 }
-
-#left_div{
-    display: block;
-    float: left;
+body{
+    display: flex;
+    align-items: center;
+    padding: 0, 10px;
+    justify-content: center;
+    min-height: 100vh;
+    background: white;
+    background-image: url("images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 98%;
+    background-position-y: center;
+    background-position-x: center;
+    padding: 0 10px;
 }
-
-#right_div{
-    display: block;
-    float: right;
+.container{
+    width: 1000px;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;   
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
-
-#hang_man{
-    height: 200px;
-    width: 100px;
+.hangman-box img{
+    max-width: 350px;
 }
-
-#letter_line_box{
-    width: 450px;
-    height: 0px;
+.hangman-box h4{
+    text-transform: uppercase;
     text-align: center;
-    border-color: black;
-    border: 1px;
-    margin-left: 150px;
-    margin-top: 100px;
-    font-size: 2em;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-top: -30px;
 }
-
-#keyboard_box{
-    margin-top: 190px;
-    margin-left: 50px;
-    width: 450px;
+.hangman-box h4 b{
+    font-weight: 600;
 }
-
-.row{
-    display: block;
-    width: 650px;
-    height: 80px;
+.hangman-box .guesses-text b{
+    color: red;
+}
+.word-display{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+.word-display .letter{
+    width: 50px;
+    font-size: 2rem;
+    font-weight: 600;
     text-align: center;
-    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 90px;
+    border-bottom: 3px solid #000;
 }
-
-.btn{
-    background-color: rgb(255, 255, 255);
-    width: 45px;
-    height: 50px;
-    color: rgb(45, 45, 45);
-    font-size: 1.3em;
-    border-color: rgb(255, 255, 255);
-    border: 0;
+.word-display .letter.guessed{
+    border-color: transparent;
+    margin: -120px 0 35px;
+    font-size: 50px;
+}
+.game-box h4 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 250px;
+    margin-top: -50px;
+    color: blue;
+}
+.hint-text button{
+    border: transparent;
+    color: blue;
+    font-family: cursive;
+    background-color: transparent;
     cursor: pointer;
-    transition: background-color 0.5s;
+    font-size: 1.1rem;
 }
-
-.btn:hover{
+.hint-text button:hover{
+    text-decoration: underline;
+}
+.hint-text button[disabled]{
+    pointer-events: none;
+}
+.game-box .keyboard{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: -230px;
+}
+.keyboard button{
+    color: #000;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    padding: 12px;
+    border: none;
+    background: white;
+    text-transform: uppercase;
+    width: calc(100% / 9 - 5px);
+}
+.keyboard button:hover{
     color: gray;
+}
+.keyboard button.correctWord{
+    color: green;
+    text-decoration: line-through;
+    pointer-events: none;
+}
+.keyboard button[disabled]{
+    color: red;
+    text-decoration: line-through;
+    pointer-events: none;
+}
+.game-modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    transition: opacity 0.4s ease;
+}
+.game-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.game-modal .content{
+    background: black;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+.game-modal img.won{
+    max-width: 130px;
+    margin-bottom: 20px;
+}
+.game-modal img.lost{
+    max-width: 130px;
+    margin-bottom: -10px;
+}
+.game-modal h4{
+    font-size: 1.53rem;
+    color: white;
+}
+.game-modal p{
+    font-size: 1.15rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
+    color: white;
+}
+.game-modal p b{
+    color: rgb(125, 253, 125);
+    font-weight: 600;
+}
+.game-modal button{
+    width: 250px;
+    height: 60px;
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    padding: 12px;
+    border: none;
+    background: white;
+    text-transform: uppercase;
+    border: solid;
+    border-radius: 20px;
+}
+.game-modal button:hover{
+    background: #000;
+    color: white;
+}
+@media (max-width: 782px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    .hangman-box img{
+        max-width: 150px;
+        max-height: 150px;
+        margin-top: -60px;
+        margin-left: 50px;
+        margin-top: -1px;
+    }
+    .word-display{
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+    .word-display .letter{
+        width: 20px;
+        font-size: 1.5rem;
+        margin-bottom: 70px;
+    }
+    .word-display .letter.guessed{
+        margin: -80px 0 35px;
+        font-size: 40px;
+        font-weight: 400;
+    }
+    .game-box .keyboard{
+        gap: 2px;
+    }
+    .keyboard button{
+        font-size: 20px;
+        padding: 2px;
+        width: calc(100% / 9 - 5px);
+        height: 50px;
+    }
+    .hangman-box h4{
+        font-size: 1.1rem;
+        text-transform: capitalize;
+    }
 }
