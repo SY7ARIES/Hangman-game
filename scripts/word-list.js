@@ -22,5 +22,9 @@ const wordList = [
     {
         word: "chocolate",
         hint: "A sweet treat made from cocoa beans."
+    },
+    {
+        word: "april",
+        hint: "A month of the year"
     }
 ];
