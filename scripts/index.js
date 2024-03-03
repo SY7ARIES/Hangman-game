@@ -19,7 +19,7 @@ var bgm = new Audio("sound-tracks/bgm.mp3");
 bgm.play();
 
 const restGame = () => {
-    //ressetting all game variables and UI elements
+    //resetting all game variables and UI elements
     correctLetters = [];
     wrongGuessCount = 0;
     hangmanImage.src = `images/stage-${wrongGuessCount + 1}.png`;
